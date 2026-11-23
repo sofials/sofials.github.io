@@ -2,10 +2,13 @@
    Per cambiare o aggiungere clip modifica HERO_CLIPS (stesso ordine = ordine di riproduzione). */
 (function () {
   const HERO_CLIPS = [
-    { src: "assets/projects/tempio-infinito/anim.mp4", poster: "assets/projects/tempio-infinito/cover.webp", name: "tempio_infinito.mp4", id: "tempio-infinito" },
-    { src: "assets/projects/sogno-hokusai/anim.mp4", poster: "assets/projects/sogno-hokusai/cover.webp", name: "sogno_hokusai.mp4", id: "sogno-hokusai" }
+    { src: "assets/projects/tempio-infinito/anim.mp4", hd: "assets/projects/tempio-infinito/hero-1080.mp4", poster: "assets/projects/tempio-infinito/cover.webp", name: "tempio_infinito.mp4", id: "tempio-infinito" },
+    { src: "assets/projects/sogno-hokusai/anim.mp4", hd: "assets/projects/sogno-hokusai/hero-1080.mp4", poster: "assets/projects/sogno-hokusai/cover.webp", name: "sogno_hokusai.mp4", id: "sogno-hokusai" }
   ];
   const FADE = 1.2; // secondi di dissolvenza
+  // versione 1080p sugli schermi grandi, 720p su telefono / connessione lenta
+  const conn = navigator.connection || {};
+  const useHD = Math.max(screen.width, screen.height) * (window.devicePixelRatio || 1) > 1400 && !conn.saveData && !/(^|-)2g$/.test(conn.effectiveType || "");
 
   const hero = document.querySelector(".hero");
   const vids = [...hero.querySelectorAll(".hero-video")];
@@ -20,7 +23,7 @@
   }
   function load(v, clip) {
     v.poster = clip.poster;
-    v.src = clip.src;
+    v.src = useHD && clip.hd ? clip.hd : clip.src;
     v.muted = muted;
     v.load();
   }
