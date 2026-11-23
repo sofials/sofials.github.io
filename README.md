@@ -37,6 +37,11 @@ Tutto sta in **`js/projects.js`**:
 
 Testi di about, hero, ecc.: `js/common.js` → `STRINGS`.
 
+## Hero
+
+L'hero riproduce in loop le animazioni elencate in `HERO_CLIPS` dentro `js/hero.js` (dissolvenza tra una e l'altra, audio off di default).
+Per i video web: 1280 px di larghezza, H.264, `-movflags +faststart` (così partono subito).
+
 ## Immagini e video
 
 - Cover: `assets/projects/<id>/cover.jpg` (consigliato 1600×1000, < 400 KB, anche .webp).
@@ -55,4 +60,4 @@ pulse, claudio, shorekeepers, bed-time, ar-markerless.
 - [ ] Cover e immagini da Notion
 - [ ] Stack di It Reminded Me of You (su Notion è un'immagine, non l'ho potuto leggere)
 - [ ] Ricontrollare "Cosa ho fatto" nei progetti di team (Harmony in particolare)
-- [ ] Nuovi lavori di animazione (tag `animation`)
+- [ ] Descrizioni definitive di Tempio Infinito e Sogno Hokusai

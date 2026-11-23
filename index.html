@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1795435146">
+  <link rel="stylesheet" href="css/style.css?v=1795447477">
 </head>
 <body class="home">
   <header class="nav">
@@ -27,7 +27,8 @@
   </header>
 
   <section class="hero" id="top">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <video class="hero-video" playsinline muted preload="auto" aria-hidden="true"></video>
+    <video class="hero-video" playsinline muted preload="none" aria-hidden="true"></video>
     <div class="hero-content win">
       <div class="win-bar"><span class="mono">~/home/sofia_lo_sardo/readme.txt</span><i></i><i></i><i></i></div>
       <div class="hero-body">
@@ -37,7 +38,10 @@
         <a class="hero-cta" href="#work"><span data-i18n="hero.cta">entra</span> ↓</a>
       </div>
     </div>
-    <p class="hero-loading mono" data-i18n="hero.loading"></p>
+    <div class="hero-hud mono">
+      <a class="hero-now" href="#"><b>▶</b> <span></span> · Blender</a>
+      <button class="hero-sound" aria-pressed="false">♪ <span>audio off</span></button>
+    </div>
   </section>
 
   <main>
@@ -101,9 +105,9 @@
 
   <footer class="footer mono">© <span id="year"></span> Sofia Lo Sardo · <span data-i18n="footer"></span></footer>
 
-  <script src="js/projects.js?v=1795435146"></script>
-  <script src="js/common.js?v=1795435146"></script>
-  <script src="js/home.js?v=1795435146"></script>
-  <script type="module" src="js/hero.js?v=1795435146"></script>
+  <script src="js/projects.js?v=1795447477"></script>
+  <script src="js/common.js?v=1795447477"></script>
+  <script src="js/home.js?v=1795447477"></script>
+  <script src="js/hero.js?v=1795447477"></script>
 </body>
 </html>

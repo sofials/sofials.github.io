@@ -1,11 +1,13 @@
 :root {
-  --bg: #f5f1fb;
+  --bg: #f8f0fa;
   --paper: #fffdfd;
   --ink: #2a2340;
   --ink-2: #5d5478;
   --line: #2a2340;
-  --lilac: #b79cff;
-  --pink: #ffc6dc;
+  --lilac: #c08cff;
+  --pink: #ff9fd4;
+  --sun: #ffd76a;
+  --magenta: #c2399f;
   --mint: #bff0de;
   --sky: #c9d6ff;
   --radius: 14px;
@@ -54,12 +56,24 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; mar
 /* ---------- hero ---------- */
 .hero {
   position: relative; height: 100svh; min-height: 560px; overflow: hidden;
-  background: linear-gradient(180deg, #a9b2fa 0%, #dccbfa 40%, #f6d9e6 62%, #8fc79a 62.2%, #6fae7e 100%);
+  background: linear-gradient(180deg, #5b4bd6 0%, #c35fd6 45%, #ff9fd4 70%, #f3c7dd 100%);
 }
-#hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1.2s; }
-.hero.ready #hero-canvas { opacity: 1; }
-.hero-loading { position: absolute; bottom: 18px; right: 22px; color: #fff; opacity: .9; transition: opacity .6s; }
-.hero.ready .hero-loading, .hero.no-webgl .hero-loading { opacity: 0; }
+.hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: 0; transition: opacity 1.2s ease;
+}
+.hero-video.on { opacity: 1; }
+.hero-hud {
+  position: absolute; z-index: 3; right: 20px; bottom: 18px; display: flex; gap: 8px; align-items: center;
+}
+.hero-now, .hero-sound {
+  font: 400 .72rem var(--mono); color: var(--ink); text-decoration: none; cursor: pointer;
+  background: rgba(255, 253, 253, .8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 12px;
+}
+.hero-now b { color: var(--magenta); font-weight: 400; }
+.hero-now:hover, .hero-sound:hover { background: var(--sun); }
+.hero-sound[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .hero-content {
   z-index: 2;
   position: absolute; left: max(20px, 7vw); bottom: 12vh; width: min(560px, calc(100% - 40px));
@@ -67,7 +81,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; mar
 }
 .hero-body { padding: 22px 26px 24px; color: var(--ink); }
 .hero h1 { font-size: clamp(3rem, 7vw, 5.6rem); letter-spacing: -.01em; }
-.hero h1 em { font-style: italic; color: #6f5fd8; }
+.hero h1 em { font-style: italic; color: var(--magenta); }
 .hero-role { margin: 14px 0 6px; font-size: .85rem; color: var(--ink-2); }
 .hero-line { font-size: clamp(1.02rem, 1.4vw, 1.18rem); max-width: 34ch; margin: 0 0 20px; }
 .hero-cta {
@@ -91,7 +105,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; mar
 }
 .win-bar {
   display: flex; align-items: center; gap: 6px; padding: 7px 10px; border-bottom: 1.5px solid var(--line);
-  background: linear-gradient(90deg, var(--lilac), var(--pink));
+  background: linear-gradient(90deg, var(--lilac), var(--pink) 70%, var(--sun));
 }
 .win-bar .mono { margin-right: auto; font-size: .72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .win-bar i { width: 11px; height: 11px; border: 1.5px solid var(--line); border-radius: 3px; background: var(--paper); flex: none; }
@@ -205,7 +219,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; mar
 .hood-intro { font-family: var(--serif); font-size: 1.4rem; line-height: 1.3; margin: 0 0 22px; }
 .steps { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 12px; }
 .step { display: grid; grid-template-columns: 48px 1fr; gap: 10px; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--bg); }
-.step-n { font-size: 1rem; color: var(--lilac); font-weight: 700; }
+.step-n { font-size: 1rem; color: var(--magenta); font-weight: 700; }
 .step h4 { margin: 0 0 4px; font-size: 1rem; }
 .step p { margin: 0; color: var(--ink-2); font-size: .93rem; }
 .table-wrap { margin: 24px 0; overflow-x: auto; }
@@ -246,8 +260,13 @@ th { font: 700 .72rem var(--mono); background: var(--bg); border-bottom: 1.5px s
   .meta > div:last-child { border-bottom: 0; }
   .hero-content { bottom: 6vh; }
   .hero-body { padding: 16px 18px 18px; }
+  .hero-content { bottom: 70px; }
+  .hero-hud { left: 20px; right: auto; bottom: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+.p-video { aspect-ratio: 16 / 9; background: #000; }
+.p-video video { width: 100%; height: 100%; display: block; object-fit: cover; }

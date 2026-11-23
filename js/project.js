@@ -4,11 +4,9 @@
 
   function media(p) {
     let out = "";
-    if (p.video) {
-      if (/youtube|vimeo/.test(p.video)) {
+    if (p.video && /youtube|vimeo/.test(p.video)) {
+      {
         out += `<div class="video"><iframe src="${esc(p.video)}" title="${esc(p.title)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
-      } else {
-        out += `<div class="video"><video src="${esc(p.video)}" controls playsinline muted loop></video></div>`;
       }
     }
     if (p.gallery && p.gallery.length) {
@@ -60,7 +58,7 @@
           <p class="p-tagline">${esc(L.tagline)}</p>
           <div class="tags">${tags}</div>
         </header>
-        ${coverImg(p, "p-cover")}
+        ${p.video && !/youtube|vimeo/.test(p.video) ? `<div class="p-cover p-video"><video src="${esc(p.video)}" poster="${esc(p.cover || "")}" controls playsinline loop preload="metadata"></video></div>` : coverImg(p, "p-cover")}
         <dl class="meta">
           <div><dt class="mono">${esc(t("p.context"))}</dt><dd>${esc(L.context)}</dd></div>
           <div><dt class="mono">${esc(t("p.role"))}</dt><dd>${esc(L.role)}</dd></div>

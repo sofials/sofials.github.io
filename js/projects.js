@@ -245,6 +245,84 @@ window.PROJECTS = [
   },
 
   {
+    id: "tempio-infinito",
+    title: "Tempio Infinito",
+    file: "tempio_infinito.mp4",
+    year: "2026",
+    tags: ["animation", "art3d"],
+    featured: false,
+    accent: "#f3b7d3",
+    cover: "assets/projects/tempio-infinito/cover.webp",
+    gallery: [],
+    video: "assets/projects/tempio-infinito/anim.mp4",
+    stack: ["Blender"],
+    links: [],
+    it: {
+      tagline: "Un colonnato senza fine, sommerso nella nebbia rosa.",
+      context: "Animazione personale · Blender · 40 s",
+      role: "Progetto in autonomia",
+      concept: [
+        "Una carrellata dentro un tempio infinito: colonne erose, rampicanti sospesi, acqua ferma e una luce rosa che dissolve tutto in lontananza. Uno spazio liminale dreamcore."
+      ],
+      did: [
+        "Modellazione, materiali, luci e animazione di camera in Blender"
+      ],
+      hood: null
+    },
+    en: {
+      tagline: "An endless colonnade, drowned in pink fog.",
+      context: "Personal animation · Blender · 40 s",
+      role: "Solo project",
+      concept: [
+        "A slow camera move through an infinite temple: eroded columns, hanging vines, still water and a pink light that dissolves everything in the distance. A dreamcore liminal space."
+      ],
+      did: [
+        "Modelling, materials, lighting and camera animation in Blender"
+      ],
+      hood: null
+    }
+  },
+
+  {
+    id: "sogno-hokusai",
+    title: "Sogno Hokusai",
+    file: "sogno_hokusai.mp4",
+    year: "2026",
+    tags: ["animation", "art3d"],
+    featured: false,
+    accent: "#c35fd6",
+    cover: "assets/projects/sogno-hokusai/cover.webp",
+    gallery: [],
+    video: "assets/projects/sogno-hokusai/anim.mp4",
+    stack: ["Blender"],
+    links: [],
+    it: {
+      tagline: "Il Fuji di Hokusai, riletto come un sogno vaporwave.",
+      context: "Animazione personale · Blender · 30 s",
+      role: "Progetto in autonomia",
+      concept: [
+        "Un vulcano rosso su un mare viola che si muove, un sole a righe che si specchia nell'acqua e un cielo pieno di nuvole. L'immaginario di Hokusai passato attraverso l'estetica vaporwave."
+      ],
+      did: [
+        "Modellazione, shading, luci e animazione in Blender"
+      ],
+      hood: null
+    },
+    en: {
+      tagline: "Hokusai's Fuji, reimagined as a vaporwave dream.",
+      context: "Personal animation · Blender · 30 s",
+      role: "Solo project",
+      concept: [
+        "A red volcano over a moving violet sea, a striped sun mirrored in the water and a sky full of clouds. Hokusai's imagery filtered through a vaporwave aesthetic."
+      ],
+      did: [
+        "Modelling, shading, lighting and animation in Blender"
+      ],
+      hood: null
+    }
+  },
+
+  {
     id: "three-timelines",
     title: "Three Timelines — WebAR",
     file: "three_timelines.ar",
