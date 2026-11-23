@@ -33,6 +33,7 @@
   }
 
   function applyFilter() {
+    document.getElementById("grid").classList.toggle("filtered", active !== "all");
     document.querySelectorAll("#grid .card").forEach(c => {
       const show = active === "all" || c.dataset.tags.split(" ").includes(active);
       c.classList.toggle("hidden", !show);
