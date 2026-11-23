@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sofia Lo Sardo — XR Developer</title>
+  <meta name="description" content="Sofia Lo Sardo — XR developer & creative technologist. VR, AR, computer vision, audio-reactive systems.">
+  <meta property="og:title" content="Sofia Lo Sardo — XR Developer">
+  <meta property="og:description" content="Systems that listen to voices, hands and images — and worlds that respond.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home">
+  <header class="nav">
+    <a class="nav-logo" href="#top">sofia<span>.xr</span></a>
+    <nav class="nav-links">
+      <a href="#work" data-i18n="nav.work">Progetti</a>
+      <a href="#lab" data-i18n="nav.lab">Lab</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#contact" data-i18n="nav.contact">Contatti</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-lang="it">IT</button><button data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content win">
+      <div class="win-bar"><span class="mono">~/home/sofia_lo_sardo/readme.txt</span><i></i><i></i><i></i></div>
+      <div class="hero-body">
+        <h1>Sofia <em>Lo&nbsp;Sardo</em></h1>
+        <p class="hero-role mono" data-i18n="hero.role">XR developer & creative technologist</p>
+        <p class="hero-line" data-i18n="hero.line"></p>
+        <a class="hero-cta" href="#work"><span data-i18n="hero.cta">entra</span> ↓</a>
+      </div>
+    </div>
+    <p class="hero-loading mono" data-i18n="hero.loading"></p>
+  </section>
+
+  <main>
+    <section class="section" id="work">
+      <div class="section-head">
+        <h2 data-i18n="work.title">Progetti</h2>
+        <p data-i18n="work.sub"></p>
+      </div>
+      <div class="filters" id="filters" role="toolbar" aria-label="Filter"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="section lab" id="lab">
+      <div class="section-head">
+        <h2 data-i18n="lab.title">Lab</h2>
+        <p data-i18n="lab.sub"></p>
+      </div>
+      <div id="lab-list"></div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-grid">
+        <div class="about-photo">
+          <div class="win">
+            <div class="win-bar"><span class="mono">sofia.png</span><i></i><i></i><i></i></div>
+            <div class="win-body photo-ph">
+              <img src="assets/sofia.jpg" alt="Sofia Lo Sardo" onerror="this.remove()">
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2 data-i18n="about.title">About</h2>
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+          <p data-i18n="about.p3"></p>
+          <div class="now">
+            <p class="mono now-label">● <span data-i18n="now.title">Ora</span></p>
+            <p data-i18n="now.p"></p>
+            <p class="now-small" data-i18n="now.anim"></p>
+          </div>
+          <h3 class="mono" data-i18n="skills.title">Strumenti</h3>
+          <ul class="skills">
+            <li>Unity · C#</li><li>XR Interaction Toolkit</li><li>VFX Graph</li><li>Shader Graph</li>
+            <li>Unreal Engine 5</li><li>Blender</li><li>Nuke</li><li>Python · OpenCV</li>
+            <li>MediaPipe</li><li>scikit-learn</li><li>MindAR · A-Frame</li><li>JS / TS · React</li><li>Firebase</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2 data-i18n="contact.title">Scrivimi</h2>
+      <p data-i18n="contact.p"></p>
+      <div class="contact-links">
+        <a class="pill" href="mailto:sofia.losardo@gmail.com">sofia.losardo@gmail.com</a>
+        <a class="pill" href="https://www.linkedin.com/in/sofia-lo-sardo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="pill" href="https://github.com/sofials" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">© <span id="year"></span> Sofia Lo Sardo · <span data-i18n="footer"></span></footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+  <script type="module" src="js/hero.js"></script>
+</body>
+</html>
