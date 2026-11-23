@@ -13,8 +13,7 @@ window.TAGS = {
   ar: { it: "AR", en: "AR" },
   cv: { it: "Computer Vision", en: "Computer Vision" },
   audio: { it: "Audio-reattivo", en: "Audio-reactive" },
-  gesture: { it: "Gesture", en: "Gesture" },
-  installation: { it: "Installazione", en: "Installation" },
+  installation: { it: "Installazioni", en: "Installations" },
   game: { it: "Game", en: "Game" },
   art3d: { it: "3D / VFX", en: "3D / VFX" },
   animation: { it: "Animazione", en: "Animation" }
@@ -98,7 +97,7 @@ window.PROJECTS = [
     title: "Gestural Canvas",
     file: "gestural_canvas.cv",
     year: "2026",
-    tags: ["cv", "gesture", "art3d"],
+    tags: ["cv", "art3d"],
     featured: true,
     accent: "#7fd6c2",
     cover: "assets/projects/gestural-canvas/cover.webp",
@@ -189,7 +188,7 @@ window.PROJECTS = [
     title: "Resonance",
     file: "resonance.void",
     year: "2026",
-    tags: ["vr", "audio"],
+    tags: ["vr", "audio", "art3d"],
     featured: false,
     accent: "#ff9fb8",
     cover: "assets/projects/resonance/cover.webp",
@@ -293,7 +292,7 @@ window.PROJECTS = [
     title: "It Reminded Me of You",
     file: "postcards.live",
     year: "2025/26",
-    tags: ["gesture", "cv", "installation"],
+    tags: ["cv", "installation"],
     featured: false,
     accent: "#9fc3ff",
     cover: "assets/projects/it-reminded-me-of-you/cover.webp",
@@ -354,7 +353,7 @@ window.PROJECTS = [
     title: "Pulse",
     file: "pulse.sculpt",
     year: "2026",
-    tags: ["audio", "installation", "art3d"],
+    tags: ["audio", "art3d"],
     featured: false,
     accent: "#ff8fd8",
     cover: "assets/projects/pulse/cover.webp",
@@ -364,7 +363,7 @@ window.PROJECTS = [
     links: [],
     it: {
       tagline: "Una scultura generativa che cresce con la musica.",
-      context: "Progetto personale · pensato come installazione (schermo o proiettore)",
+      context: "Progetto personale · scultura generativa in tempo reale",
       role: "Progetto in autonomia",
       concept: [
         "Scegli un brano e il segnale audio controlla tutto. La sfera si deforma, i bassi la gonfiano lentamente e gli alti la increspano. A ogni beat spuntano rami procedurali, come un corallo sonoro diverso per ogni canzone."
@@ -386,7 +385,7 @@ window.PROJECTS = [
     },
     en: {
       tagline: "A generative sculpture that grows with music.",
-      context: "Personal project · designed as an installation (screen or projector)",
+      context: "Personal project · real-time generative sculpture",
       role: "Solo project",
       concept: [
         "Pick a track and the audio signal drives everything. The sphere deforms: bass swells it slowly, highs make it ripple. On every beat procedural branches sprout, like a sonic coral that's different for every song."
@@ -507,7 +506,7 @@ window.PROJECTS = [
     title: "Bed Time",
     file: "bed_time.dream",
     year: "2024/25",
-    tags: ["game", "art3d", "animation"],
+    tags: ["game", "art3d"],
     featured: false,
     accent: "#c3a6ff",
     cover: "assets/projects/bed-time/cover.webp",
@@ -520,28 +519,26 @@ window.PROJECTS = [
     it: {
       tagline: "Un platformer 3D dentro i sogni lucidi di un bambino.",
       context: "Game design and gamification · Politecnico di Torino · A.A. 2024/25",
-      role: "Lead Programmer · VFX Artist · Animator",
+      role: "Lead Programmer · VFX Artist",
       concept: [
         "Luke ha il potere dei sogni lucidi e ogni notte entra in un mondo costruito dalla sua mente. Rallenta il tempo, si teletrasporta, crea piattaforme, tutto alimentato da una risorsa limitata, la Lucidità. Poi il suo Dreamworld inizia a incrinarsi."
       ],
       did: [
         "Coordinamento tecnico, sistemi core e architettura del codice",
-        "VFX onirici in VFX Graph",
-        "Animazioni di personaggi ed elementi interattivi"
+        "VFX onirici in VFX Graph"
       ],
       hood: null
     },
     en: {
       tagline: "A 3D platformer inside a child's lucid dreams.",
       context: "Game design and gamification · Politecnico di Torino · 2024/25",
-      role: "Lead Programmer · VFX Artist · Animator",
+      role: "Lead Programmer · VFX Artist",
       concept: [
         "Luke can dream lucidly, and every night he dives into a world built by his own mind. He slows time, teleports, creates platforms, all powered by a limited resource called Lucidity. Then his Dreamworld starts to crack."
       ],
       did: [
         "Technical lead, core systems and code architecture",
-        "Dreamlike VFX in VFX Graph",
-        "Character and interactive-element animation"
+        "Dreamlike VFX in VFX Graph"
       ],
       hood: null
     }
