@@ -109,14 +109,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; mar
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .card { transition: transform .22s, box-shadow .22s; }
 .card:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--line); }
-.card.featured { grid-column: span 1; }
-@media (min-width: 900px) {
-  .card.featured { grid-column: span 1; }
-  .grid:not(.filtered) .card.featured:first-child { grid-column: span 2; grid-row: span 2; }
-  .grid:not(.filtered) .card.featured:first-child { display: flex; flex-direction: column; }
-  .grid:not(.filtered) .card.featured:first-child .card-cover { aspect-ratio: auto; flex: 1; min-height: 300px; }
-  .grid:not(.filtered) .card.featured:first-child h3 { font-size: 2.4rem; }
-}
 .card.hidden { display: none !important; }
 .card-cover, .lab-cover, .p-cover {
   position: relative; aspect-ratio: 16 / 10; background-size: cover; overflow: hidden;
