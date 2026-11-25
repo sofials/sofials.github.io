@@ -39,7 +39,7 @@ window.PROJECTS = [
     it: {
       tagline: "Canti, e ogni nota dipinge nell'aria forme di luce.",
       context: "Residenza internazionale AVENUE CoVE (Erasmus+) · The Animation Workshop, Viborg (DK) · aprile 2026",
-      role: "VR Development · VFX Development & Behaviour — lavoro di team",
+      role: "VR Development · interazione mani–particelle e analisi audio — progetto di gruppo",
       concept: [
         "Un'esperienza VR in cui la voce è l'unica interfaccia. In uno spazio intimo e silenzioso l'utente canta: la frequenza diventa geometria cimatica, l'intensità diventa turbolenza, il timbro diventa colore.",
         "Nessun controller, nessun bottone. Solo voce, mani e ascolto. Le forme create si possono toccare, spingere, disperdere, e alla fine tornano attorno all'utente come una galleria personale di ciò che ha cantato."
@@ -66,7 +66,7 @@ window.PROJECTS = [
     en: {
       tagline: "You sing, and every note paints shapes of light in the air.",
       context: "AVENUE CoVE international residency (Erasmus+) · The Animation Workshop, Viborg (DK) · April 2026",
-      role: "VR Development · VFX Development & Behaviour — team project",
+      role: "VR Development · hand–particle interaction and audio analysis — team project",
       concept: [
         "A VR experience where the voice is the only interface. In a quiet, intimate space the user sings: frequency becomes cymatic geometry, intensity becomes turbulence, timbre becomes colour.",
         "No controllers, no buttons. Just voice, hands and listening. The shapes can be touched, pushed and scattered, and at the end they return around the user as a personal gallery of what they sang."
@@ -108,7 +108,7 @@ window.PROJECTS = [
       { label: { it: "Prova la demo online", en: "Try the live demo" }, url: "https://sofials.github.io/gestural-canvas/" }
     ],
     it: {
-      tagline: "La mano diventa pennello, campo di forze e direzione artistica.",
+      tagline: "Un ambiente generativo che si disegna e si controlla a gesti, nel browser.",
       context: "Progetto personale · gira interamente nel browser",
       role: "Progetto in autonomia — percezione, ML, motore generativo, deploy",
       concept: [
@@ -122,7 +122,7 @@ window.PROJECTS = [
         "Export del modello in JavaScript puro (m2cgen) e build Unity WebGL pilotata dal browser"
       ],
       hood: {
-        intro: "Quattro strati: percezione → classificazione → stabilizzazione → espressione.",
+        intro: "Cinque passaggi: percezione → classificazione → stabilità → forma → deploy.",
         steps: [
           { t: "Percezione", d: "MediaPipe Hands riduce ogni frame a 21 landmark 3D. Polso come origine, scala sulla distanza polso–medio: invariante alla distanza dalla camera." },
           { t: "Classificazione", d: "Random Forest su landmark normalizzati, con soglia di confidenza a 0.7. Cinque gesti scelti per la massima separabilità geometrica." },
@@ -131,7 +131,7 @@ window.PROJECTS = [
           { t: "Deploy", d: "Modello esportato in JS (~0,5 MB gzip) e Unity WebGL via SendMessage: stessa logica in locale (OSC) e online." }
         ],
         table: {
-          caption: "La saga del dito puntato: quando le regole perdono contro i dati",
+          caption: "Riconoscere il dito puntato: dalle regole al machine learning",
           head: ["Tentativo", "Risultato"],
           rows: [
             ["Regola su distanza dal polso", "Instabile, troppo sensibile al rumore"],
@@ -145,7 +145,7 @@ window.PROJECTS = [
       }
     },
     en: {
-      tagline: "Your hand becomes brush, force field and art director.",
+      tagline: "A generative environment you draw and control with gestures, in the browser.",
       context: "Personal project · runs entirely in the browser",
       role: "Solo project — perception, ML, generative engine, deployment",
       concept: [
@@ -159,7 +159,7 @@ window.PROJECTS = [
         "Model exported to plain JavaScript (m2cgen) and a Unity WebGL build driven by the browser"
       ],
       hood: {
-        intro: "Four layers: perception → classification → stabilisation → expression.",
+        intro: "Five steps: perception → classification → stability → shape → deploy.",
         steps: [
           { t: "Perception", d: "MediaPipe Hands turns each frame into 21 3D landmarks. Wrist as origin, scale by wrist–middle distance: invariant to camera distance." },
           { t: "Classification", d: "Random Forest on normalised landmarks with a 0.7 confidence threshold. Five gestures chosen for maximum geometric separability." },
@@ -168,7 +168,7 @@ window.PROJECTS = [
           { t: "Deploy", d: "Model exported to JS (~0.5 MB gzipped) and Unity WebGL via SendMessage: same logic locally (OSC) and online." }
         ],
         table: {
-          caption: "The pointing-finger saga: when rules lose to data",
+          caption: "Recognising the pointing finger: from rules to machine learning",
           head: ["Attempt", "Result"],
           rows: [
             ["Wrist-distance rule", "Unstable, too noise-sensitive"],
@@ -201,7 +201,7 @@ window.PROJECTS = [
       context: "Progetto personale · prototipo desktop completo, porting su Quest 3S in corso",
       role: "Progetto in autonomia",
       concept: [
-        "Più forte canti, più veloce voli. La direzione è quella in cui guardi. Attorno a te le nebulose respirano col volume, gli attacchi vocali fanno nascere strutture organiche, e la luce passa dal viola del silenzio all'arancione della voce piena."
+        "Più forte canti, più veloce voli. La direzione è quella in cui guardi. Attorno a te le nebulose reagiscono al volume, gli attacchi vocali fanno nascere nuove strutture e il colore della scena cambia con l'intensità della voce."
       ],
       did: [
         "Analizzatore audio custom: volume, frequenza dominante, onset",
@@ -212,7 +212,7 @@ window.PROJECTS = [
         intro: "Tre segnali estratti dal microfono guidano movimento, mondo e atmosfera.",
         steps: [
           { t: "Volume", d: "RMS su buffer da 256 campioni letto da AudioClip.GetData(), con smoothing asimmetrico: veloce in salita, lento in discesa." },
-          { t: "Frequenza", d: "Zero-crossing e bande bass / mid / high." },
+          { t: "Frequenza", d: "Zero-crossing sul buffer per stimare la frequenza dominante. Lo stesso conteggio su 8 blocchi assegna l'energia alle bande bass / mid / high, senza FFT." },
           { t: "Onset", d: "Delta di volume oltre una soglia, con cooldown: fa da trigger per lo spawn delle strutture." },
           { t: "Volo", d: "InverseLerp → Pow(x, 0.7) → velocità, con direzione dalla camera e Lerp per la morbidezza." },
           { t: "Mondo", d: "Icosfere deformate da Perlin noise modulato dagli alti, colore emissivo dalla frequenza, URP Volume override." }
@@ -224,7 +224,7 @@ window.PROJECTS = [
       context: "Personal project · desktop prototype complete, Quest 3S port in progress",
       role: "Solo project",
       concept: [
-        "The louder you sing, the faster you fly. You move where you look. Around you nebulae breathe with your volume, vocal attacks grow organic structures, and the light shifts from the violet of silence to the orange of a full voice."
+        "The louder you sing, the faster you fly. You move where you look. Around you nebulae react to your volume, vocal attacks spawn new structures and the colour of the scene changes with the intensity of your voice."
       ],
       did: [
         "Custom audio analyser: volume, dominant frequency, onset",
@@ -235,7 +235,7 @@ window.PROJECTS = [
         intro: "Three signals extracted from the microphone drive movement, world and atmosphere.",
         steps: [
           { t: "Volume", d: "RMS on a 256-sample buffer read from AudioClip.GetData(), with asymmetric smoothing: fast attack, slow decay." },
-          { t: "Frequency", d: "Zero-crossing and bass / mid / high bands." },
+          { t: "Frequency", d: "Zero-crossing on the buffer to estimate the dominant frequency. The same count over 8 blocks assigns energy to bass / mid / high bands, no FFT." },
           { t: "Onset", d: "Volume delta over a threshold, with cooldown: triggers structure spawning." },
           { t: "Flight", d: "InverseLerp → Pow(x, 0.7) → speed, direction from the camera, Lerp for smoothness." },
           { t: "World", d: "Icospheres deformed by Perlin noise modulated by highs, emissive colour from frequency, URP Volume overrides." }
@@ -258,26 +258,26 @@ window.PROJECTS = [
     stack: ["Blender"],
     links: [],
     it: {
-      tagline: "Un colonnato senza fine, sommerso nella nebbia rosa.",
+      tagline: "Carrellata in un tempio infinito, animata in Blender.",
       context: "Animazione personale · Blender · 40 s",
       role: "Progetto in autonomia",
       concept: [
-        "Una carrellata dentro un tempio infinito: colonne erose, rampicanti sospesi, acqua ferma e una luce rosa che dissolve tutto in lontananza. Uno spazio liminale dreamcore."
+        "Una carrellata dentro un tempio infinito: colonne erose, rampicanti, acqua ferma e nebbia rosa. Uno spazio liminale in stile dreamcore."
       ],
       did: [
-        "Modellazione, materiali, luci e animazione di camera in Blender"
+        "Composizione della scena (asset BlenderKit e modelli in stile Bryce), materiali, luci e animazione di camera in Blender"
       ],
       hood: null
     },
     en: {
-      tagline: "An endless colonnade, drowned in pink fog.",
+      tagline: "A camera move through an infinite temple, animated in Blender.",
       context: "Personal animation · Blender · 40 s",
       role: "Solo project",
       concept: [
-        "A slow camera move through an infinite temple: eroded columns, hanging vines, still water and a pink light that dissolves everything in the distance. A dreamcore liminal space."
+        "A slow camera move through an infinite temple: eroded columns, vines, still water and pink fog. A dreamcore-style liminal space."
       ],
       did: [
-        "Modelling, materials, lighting and camera animation in Blender"
+        "Scene composition (BlenderKit assets and Bryce-style models), materials, lighting and camera animation in Blender"
       ],
       hood: null
     }
@@ -297,26 +297,26 @@ window.PROJECTS = [
     stack: ["Blender"],
     links: [],
     it: {
-      tagline: "Il Fuji di Hokusai, riletto come un sogno vaporwave.",
+      tagline: "Il Fuji rosso di Hokusai in chiave vaporwave, animato in Blender.",
       context: "Animazione personale · Blender · 30 s",
       role: "Progetto in autonomia",
       concept: [
-        "Un vulcano rosso su un mare viola che si muove, un sole a righe che si specchia nell'acqua e un cielo pieno di nuvole. L'immaginario di Hokusai passato attraverso l'estetica vaporwave."
+        "Ispirata al Fuji rosso di Hokusai, con gli elementi tipici del vaporwave: sole a righe riflesso nell'acqua, mare viola in movimento, cielo di nuvole."
       ],
       did: [
-        "Modellazione, shading, luci e animazione in Blender"
+        "Composizione della scena (asset BlenderKit e modelli in stile Bryce), shading, luci e animazione in Blender"
       ],
       hood: null
     },
     en: {
-      tagline: "Hokusai's Fuji, reimagined as a vaporwave dream.",
+      tagline: "Hokusai's Red Fuji in a vaporwave key, animated in Blender.",
       context: "Personal animation · Blender · 30 s",
       role: "Solo project",
       concept: [
-        "A red volcano over a moving violet sea, a striped sun mirrored in the water and a sky full of clouds. Hokusai's imagery filtered through a vaporwave aesthetic."
+        "Inspired by Hokusai's Red Fuji, with typical vaporwave elements: a striped sun reflected in the water, a moving violet sea, a sky of clouds."
       ],
       did: [
-        "Modelling, shading, lighting and animation in Blender"
+        "Scene composition (BlenderKit assets and Bryce-style models), shading, lighting and animation in Blender"
       ],
       hood: null
     }
@@ -338,7 +338,7 @@ window.PROJECTS = [
     it: {
       tagline: "La storia di una famiglia in tre tempi: prima, durante e dopo un incendio.",
       context: "Challenge universitaria per la Fondazione Marazzato · parte di Life on Wheels · A.A. 2025/26",
-      role: "Project Manager e referente tecnico · sviluppo in autonomia dei deliverable tecnologici",
+      role: "Project Manager e referente tecnico · ho sviluppato io la parte tecnologica",
       concept: [
         "Un'esperienza AR che si apre dal browser del visitatore, senza installare niente. Inquadrando i marker accanto agli oggetti esposti si attivano layer narrativi, e una ghiera virtuale permette di spostarsi tra i tre momenti della storia.",
         "È pensata come aggiunta alla scenografia fisica: senza smartphone l'area funziona comunque come installazione."
@@ -352,7 +352,7 @@ window.PROJECTS = [
     en: {
       tagline: "A family's story in three times: before, during and after a fire.",
       context: "University challenge for Fondazione Marazzato · part of Life on Wheels · 2025/26",
-      role: "Project Manager and technical lead · built the tech deliverables independently",
+      role: "Project Manager and technical lead · I built the tech side myself",
       concept: [
         "An AR experience that opens in the visitor's browser, with nothing to install. Pointing the phone at markers next to the exhibits triggers narrative layers, and a virtual dial moves between the three moments of the story.",
         "It's designed as an addition to the physical set: without a phone the area still works as an installation."
@@ -379,7 +379,7 @@ window.PROJECTS = [
     stack: ["Firebase", "TouchDesigner", "MediaPipe", "Depth-sensing camera", "Vercel", "Node.js"],
     links: [],
     it: {
-      tagline: "Cartoline d'epoca che si girano a mani libere, nell'aria.",
+      tagline: "Cartoline d'epoca da inviare dal telefono e sfogliare a gesti su uno schermo a parete.",
       context: "Challenge universitaria per la Fondazione Marazzato · parte di Life on Wheels · A.A. 2025/26",
       role: "Project Manager e referente tecnico · sviluppo in autonomia",
       concept: [
@@ -402,7 +402,7 @@ window.PROJECTS = [
       }
     },
     en: {
-      tagline: "Vintage postcards you flip mid-air, hands-free.",
+      tagline: "Vintage postcards you send from your phone and browse with gestures on a wall screen.",
       context: "University challenge for Fondazione Marazzato · part of Life on Wheels · 2025/26",
       role: "Project Manager and technical lead · built it independently",
       concept: [
@@ -444,7 +444,7 @@ window.PROJECTS = [
       context: "Progetto personale · scultura generativa in tempo reale",
       role: "Progetto in autonomia",
       concept: [
-        "Scegli un brano e il segnale audio controlla tutto. La sfera si deforma, i bassi la gonfiano lentamente e gli alti la increspano. A ogni beat spuntano rami procedurali, come un corallo sonoro diverso per ogni canzone."
+        "Scegli un brano e il segnale audio controlla tutto. La sfera si deforma, i bassi la gonfiano lentamente e gli alti la increspano. A ogni beat spuntano rami procedurali, così ogni brano produce una forma diversa."
       ],
       did: [
         "Analisi audio a bande e beat detection",
@@ -452,7 +452,7 @@ window.PROJECTS = [
         "Crescita ramificata con L-Systems, parametri legati alla frequenza"
       ],
       hood: {
-        intro: "Lo stesso sistema, infinite forme: ogni brano produce una scultura diversa.",
+        intro: "Quattro parti: analisi audio, deformazione della sfera, crescita dei rami, luce.",
         steps: [
           { t: "Audio", d: "Volume, bande bassi / medi / alti, beat come trigger di eventi." },
           { t: "Scultura", d: "Displacement lungo la normale in Shader Graph, con proprietà esposte e controllate da script." },
@@ -466,7 +466,7 @@ window.PROJECTS = [
       context: "Personal project · real-time generative sculpture",
       role: "Solo project",
       concept: [
-        "Pick a track and the audio signal drives everything. The sphere deforms: bass swells it slowly, highs make it ripple. On every beat procedural branches sprout, like a sonic coral that's different for every song."
+        "Pick a track and the audio signal drives everything. The sphere deforms: bass swells it slowly, highs make it ripple. On every beat procedural branches sprout, so every track produces a different shape."
       ],
       did: [
         "Band-split audio analysis and beat detection",
@@ -474,7 +474,7 @@ window.PROJECTS = [
         "L-System branching growth, parameters tied to frequency"
       ],
       hood: {
-        intro: "Same system, endless forms: every track makes a different sculpture.",
+        intro: "Four parts: audio analysis, sphere deformation, branch growth, light.",
         steps: [
           { t: "Audio", d: "Volume, bass / mid / high bands, beats as event triggers." },
           { t: "Sculpture", d: "Displacement along the normal in Shader Graph, exposed properties driven by script." },
@@ -550,13 +550,13 @@ window.PROJECTS = [
     it: {
       tagline: "Esplorazione narrativa in prima persona, pensata per arrivare in VR.",
       context: "Corso di Realtà Virtuale · Politecnico di Torino · A.A. 2024/25",
-      role: "Tutta la componente grafica: direzione visiva e sviluppo degli asset",
+      role: "Componente grafica: direzione visiva, asset e integrazione in Unity",
       concept: [
-        "Un prototipo narrativo per desktop, pensato per essere esteso in VR, che unisce narrazione ambientale, esplorazione libera e interazioni simboliche."
+        "Un prototipo narrativo per desktop, pensato per essere esteso in VR, che unisce narrazione ambientale ed esplorazione libera."
       ],
       did: [
         "Concept visivo e referenze",
-        "Modellazione di ambienti e oggetti in Blender, texturing in Substance",
+        "Asset in parte modellati da me in Blender e texturizzati in Substance, in parte da librerie online",
         "Illuminazione, composizione e integrazione in Unity",
         "Script C# per il comportamento base degli NPC"
       ],
@@ -565,13 +565,13 @@ window.PROJECTS = [
     en: {
       tagline: "First-person narrative exploration, built to grow into VR.",
       context: "Virtual Reality course · Politecnico di Torino · 2024/25",
-      role: "All the visual side: art direction and asset development",
+      role: "Visual side: art direction, assets and Unity integration",
       concept: [
-        "A narrative desktop prototype designed to be extended to VR, combining environmental storytelling, free exploration and symbolic interactions."
+        "A narrative desktop prototype designed to be extended to VR, combining environmental storytelling and free exploration."
       ],
       did: [
         "Visual concept and references",
-        "Environment and prop modelling in Blender, texturing in Substance",
+        "Assets partly modelled by me in Blender and textured in Substance, partly from online libraries",
         "Lighting, composition and integration in Unity",
         "C# scripts for basic NPC behaviour"
       ],
@@ -637,7 +637,7 @@ window.PROJECTS = [
     stack: ["Python", "OpenCV (ORB, BFMatcher, RANSAC, solvePnP)", "NumPy", "trimesh", "pyrender"],
     links: [],
     it: {
-      tagline: "Come fa il telefono a sapere dove mettere l'oggetto? Ho ricostruito la pipeline da zero.",
+      tagline: "La pipeline di un'AR markerless ricostruita da zero in Python e OpenCV.",
       context: "Lab · ricerca personale in computer vision",
       role: "Progetto in autonomia",
       concept: [
@@ -659,7 +659,7 @@ window.PROJECTS = [
           { t: "Stabilizza", d: "EMA su rvec/tvec (α = 0.3). Funziona per piccole oscillazioni, mentre per rotazioni ampie servirebbe SLERP." }
         ],
         table: {
-          caption: "Il problema più duro: rotazione + cambio di luce",
+          caption: "Il limite principale: rotazione e cambi di luce",
           head: ["Tentativo", "Risultato"],
           rows: [
             ["CLAHE + più feature", "Miglioramento marginale"],
@@ -671,7 +671,7 @@ window.PROJECTS = [
       }
     },
     en: {
-      tagline: "How does your phone know where to put the object? I rebuilt the pipeline from scratch.",
+      tagline: "A markerless AR pipeline rebuilt from scratch in Python and OpenCV.",
       context: "Lab · personal computer vision research",
       role: "Solo project",
       concept: [
@@ -693,7 +693,7 @@ window.PROJECTS = [
           { t: "Stabilise", d: "EMA on rvec/tvec (α = 0.3). Works for small jitter; large rotations would need SLERP." }
         ],
         table: {
-          caption: "The hardest problem: rotation + lighting change",
+          caption: "Main limitation: rotation and lighting changes",
           head: ["Attempt", "Result"],
           rows: [
             ["CLAHE + more features", "Marginal improvement"],
