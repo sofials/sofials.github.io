@@ -102,6 +102,9 @@ window.PROJECTS = [
     accent: "#7fd6c2",
     cover: "assets/projects/gestural-canvas/cover.webp",
     gallery: [],
+    videos: [
+      { src: "assets/projects/gestural-canvas/demo.mp4", poster: "assets/projects/gestural-canvas/demo-poster.webp", ratio: "1280 / 600" }
+    ],
     video: "",
     stack: ["MediaPipe Hands", "scikit-learn (Random Forest)", "m2cgen", "JavaScript + MediaPipe Tasks Vision", "Unity 6 (URP, C#)", "OSC/UDP", "GitHub Pages"],
     links: [
@@ -554,7 +557,7 @@ window.PROJECTS = [
     featured: false,
     accent: "#8fd3ff",
     cover: "assets/projects/shorekeepers/cover.webp",
-    gallery: [],
+    gallery: ["assets/projects/shorekeepers/shot-1.webp", "assets/projects/shorekeepers/shot-2.webp", "assets/projects/shorekeepers/shot-3.webp", "assets/projects/shorekeepers/shot-4.webp"],
     video: "",
     stack: ["Unity", "C#", "Blender", "Substance Painter"],
     links: [
@@ -646,6 +649,10 @@ window.PROJECTS = [
     accent: "#7fe0ff",
     cover: "assets/projects/ar-markerless/cover.webp",
     gallery: [],
+    videos: [
+      { src: "assets/projects/ar-markerless/wireframe.mp4", poster: "assets/projects/ar-markerless/wireframe-poster.webp", ratio: "1280 / 688" },
+      { src: "assets/projects/ar-markerless/pyrender.mp4", poster: "assets/projects/ar-markerless/pyrender-poster.webp", ratio: "1280 / 702" }
+    ],
     video: "",
     stack: ["Python", "OpenCV (ORB, BFMatcher, RANSAC, solvePnP)", "NumPy", "trimesh", "pyrender"],
     links: [],
