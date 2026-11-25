@@ -9,6 +9,13 @@
         out += `<div class="video"><iframe src="${esc(p.video)}" title="${esc(p.title)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
       }
     }
+    if (p.videos && p.videos.length) {
+      out += `<h2 class="mono sec-label">${esc(t("p.videos"))}</h2><div class="vids">` +
+        p.videos.map(v => `<figure class="vid" style="aspect-ratio:${esc(v.ratio || "16 / 9")}">${v.embed
+          ? `<iframe src="${esc(v.embed)}" title="${esc(p.title)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>`
+          : `<video src="${esc(v.src)}" poster="${esc(v.poster || "")}" controls playsinline preload="none"></video>`}</figure>`).join("") +
+        `</div>`;
+    }
     if (p.gallery && p.gallery.length) {
       out += `<h2 class="mono sec-label">${esc(t("p.gallery"))}</h2><div class="gallery">` +
         p.gallery.map(g => `<figure><img src="${esc(g)}" alt="" loading="lazy" onerror="this.parentNode.remove()"></figure>`).join("") +

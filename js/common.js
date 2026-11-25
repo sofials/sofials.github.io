@@ -39,6 +39,7 @@ window.STRINGS = {
     "p.links": "Link",
     "p.next": "Prossimo",
     "p.gallery": "Galleria",
+    "p.videos": "Video",
     "p.notfound": "Progetto non trovato.",
     "footer": "fatto a mano, nel prato"
   },
@@ -81,6 +82,7 @@ window.STRINGS = {
     "p.links": "Links",
     "p.next": "Next",
     "p.gallery": "Gallery",
+    "p.videos": "Videos",
     "p.notfound": "Project not found.",
     "footer": "handmade, in the meadow"
   }

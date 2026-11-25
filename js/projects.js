@@ -192,7 +192,11 @@ window.PROJECTS = [
     featured: false,
     accent: "#ff9fb8",
     cover: "assets/projects/resonance/cover.webp",
-    gallery: [],
+    gallery: ["assets/projects/resonance/shot-1.webp", "assets/projects/resonance/shot-2.webp"],
+    videos: [
+      { src: "assets/projects/resonance/resonance1.mp4", poster: "assets/projects/resonance/resonance1-poster.webp", ratio: "2 / 1" },
+      { src: "assets/projects/resonance/resonance2.mp4", poster: "assets/projects/resonance/resonance2-poster.webp", ratio: "2 / 1" }
+    ],
     video: "",
     stack: ["Unity (URP)", "C#", "Shader Graph", "RMS / zero-crossing / onset detection", "Perlin noise", "OpenXR", "Meta Quest 3S"],
     links: [],
@@ -435,7 +439,11 @@ window.PROJECTS = [
     featured: false,
     accent: "#ff8fd8",
     cover: "assets/projects/pulse/cover.webp",
-    gallery: [],
+    gallery: ["assets/projects/pulse/shot-1.webp", "assets/projects/pulse/shot-2.webp"],
+    videos: [
+      { embed: "https://drive.google.com/file/d/1mklHcqlZsuB0Z1Ag5SVao8F58DV0arzx/preview" },
+      { embed: "https://drive.google.com/file/d/1d8LAgWUN2O3up8LNba4_gZbk9gkOAGQI/preview" }
+    ],
     video: "",
     stack: ["Unity (URP)", "C#", "Shader Graph", "Beat detection", "L-Systems"],
     links: [],
@@ -495,9 +503,14 @@ window.PROJECTS = [
     accent: "#a6e3a1",
     cover: "assets/projects/claudio/cover.webp",
     gallery: [],
+    videos: [
+      { src: "assets/projects/claudio/gameplay.mp4", poster: "assets/projects/claudio/gameplay-poster.webp" }
+    ],
     video: "",
     stack: ["Unity", "C#", "XR Interaction Toolkit", "Meta Quest"],
-    links: [],
+    links: [
+      { label: { it: "Gioca su itch.io", en: "Play on itch.io" }, url: "https://sofialss.itch.io/claudios-adventure" }
+    ],
     it: {
       tagline: "Un'AI ti chiede di salvare il mondo. Solo dopo capisci che lo stai distruggendo.",
       context: "Game jam · 72 ore · tema \"Think Globally, Act Locally\"",
